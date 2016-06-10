@@ -1,0 +1,12 @@
+jwt1:
+ build: jwt-sample-main
+jwt2:
+ build: jwt-sample-2
+haproxy:
+ build: haproxy
+ mem_limit: 50m
+ links:
+  - jwt1
+  - jwt2
+ ports:
+  - "80:80"
